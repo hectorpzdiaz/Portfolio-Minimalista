@@ -1,0 +1,24 @@
+{
+  "name": "c-users-hectorrr-desktop-proyectos-proyectosweb-proyecto-web-cv",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "postbuild":  "copy src\\*.json dist\\ && copy src\\image\\*.png dist\\",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.5.5",
+    "astro": "^4.4.1",
+    "ninja-keys": "^1.2.2",
+    "react": "^18.2.0",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.20",
+    "copy": "^0.3.2"
+  }
+}

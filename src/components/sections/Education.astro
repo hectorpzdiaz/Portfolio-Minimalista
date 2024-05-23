@@ -1,0 +1,164 @@
+---
+import Section from '@/components/Section.astro';
+import {education} from '@/cvEs.json'
+---
+
+<Section  >
+
+<h2 id="educacion">Educación/Certificados</h2>
+
+    <div id="contenedorEducation">
+    {
+        education.map(({institution,area,studyType,url}) =>{
+
+            return(
+            <div id="contenedorIndividual">
+               <h3><span>&bull;</span> {institution}</h3>
+               
+                <h4 class="studyType">{studyType}</h4>
+                <p class="areaEducacion">{area}</p>
+                <button id="botonCertificados"  class="botonCertificados" >certificado</button> 
+            <img    class="imgCertificado" src={url}/>
+            </div>   
+           
+
+            )
+
+        })
+
+    }
+
+  </div>
+
+</Section>
+
+<script>
+
+
+
+  const botonCertificados = document.getElementsByClassName("botonCertificados");
+
+  var click = 0;
+  for( var i=0; i < botonCertificados.length; i++ ){
+
+
+    botonCertificados[i].addEventListener("click", (event)=>{
+
+      var botonClicado = event.currentTarget as HTMLButtonElement;
+      var imgCertificado = botonClicado.nextElementSibling as HTMLImageElement;
+    
+
+      if(click == 0){
+        imgCertificado.style.visibility="visible"
+        imgCertificado.style.height="30rem"
+        botonClicado.style.transform="scale(0.9)"
+        botonClicado.style.border="2px solid black"
+        setTimeout(() => {
+           
+            const scrollFinal = window.scrollY + imgCertificado.offsetHeight;
+            window.scrollTo({
+                top: scrollFinal,
+                behavior: 'smooth'
+            });
+        }, 100); // Tiempo de espera debe coincidir con la duración de la transición CSS (0.5s en este caso)
+    
+  
+ 
+        click++
+ 
+
+      }else{
+
+        imgCertificado.style.visibility="hidden"
+        imgCertificado.style.height="0rem"
+        botonClicado.style.transform="none";
+        botonClicado.style.border=" solid 1px rgb(167, 166, 166)"
+    
+        click --
+
+      }
+      
+      
+      
+
+    })
+
+
+
+  }
+
+  
+
+</script>
+
+
+<style>
+
+#contenedorIndividual{
+  position: relative;
+  margin-top: 1.3rem;
+  border: 1px solid rgba(128, 128, 128, 0.151);
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  
+  
+}
+  h3{
+    
+    font-size: 1.10rem;
+    color: rgb(44, 44, 43);
+  }
+
+
+  button{
+
+    border: solid 1px rgb(167, 166, 166);
+    width: 7rem;
+   color:rgb(83, 83, 83);
+   font-size: 0.8.3rem;
+    border-radius: 1rem;
+    background-color: #fdf9f9;
+    cursor: pointer;
+    padding: 0.3rem;
+    margin-top: 0.6rem;
+  
+
+}
+.botonCertificados:hover{
+    background-color: #e9e8e8;
+ 
+}
+
+
+
+
+  h4{
+    color: rgb(24, 151, 151);
+    font-size: 0.93rem;
+  }
+  p{
+    margin-top: 0.6rem;
+  }
+
+  img{
+    display: block;
+    height: 0;
+    position:relative;
+  
+    top: 0.8rem;
+    visibility: hidden;
+    border-radius: 0.4rem;
+    transition: 0.2s ease-in;
+    
+    
+  }
+
+
+
+
+
+
+
+
+
+</style>

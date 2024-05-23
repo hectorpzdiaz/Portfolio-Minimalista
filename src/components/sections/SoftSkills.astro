@@ -1,0 +1,52 @@
+---
+import  Section  from "@/components/Section.astro"
+import {softSkills} from "@/cvEs.json"
+
+
+---
+
+
+<Section >
+    <h2 id="habilidadesBlandas">Habilidades blandas</h2>
+
+    <ul>
+        {
+
+            softSkills.map(({skills}) =>(
+
+                
+                <li class="listSoft">
+                    {skills}
+                    </li>
+
+            ))
+
+
+        }
+       
+
+    </ul>
+    
+
+
+
+</Section>
+
+<style>
+  ul{
+        display: inline-flex;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+    li{
+        border-radius: 6px;
+        background:rgb(68, 68, 68) ;
+        color: rgb(245, 242, 242);
+        font-size: 0.9rem;
+        font-weight: 500;
+        padding: 0.2rem .6rem;
+    }
+ 
+
+
+</style>

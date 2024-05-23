@@ -1,0 +1,175 @@
+---
+import Section from '@/components/Section.astro';
+import {projects} from '@/cvEs.json'
+import EnterWeb from '@/icons/EnterWeb.astro'
+
+---
+
+<Section>
+    <h2 id="proyectos">Proyectos</h2>
+   
+
+    <ul>
+
+        {
+
+            projects.map(({name,description, url, isActive , highlights, img}) =>(
+
+            <li>
+              
+                  <article>
+                        <header>
+                            <div id="visitLogo">
+                               
+
+                            <h3 >{name}
+                                {
+                                    isActive && <span>&bull;</span> /* esto para el boton verde dwe que la pagina web esta aciva , si es false el isactive entonces no se renderiza el botón*/
+                                }
+                                
+                                
+                                </h3>  
+                              
+                              <img src={img}>
+                        
+                            </div> 
+                            <p class="descriptionProyects">{description}</p>
+                         </header> 
+
+                           
+                        
+                            <a  id="visitWeb"   href={url} target="_blank" title="Pagina web Historias con voz">
+                                <span class="web"> Visita la web</span>
+                                <EnterWeb/>
+                                </a>
+                        
+                            
+                        <footer class="footerProyect">
+                        
+                           { highlights.map((highlights) =>(
+
+                           <span class="highlights"> {highlights}</span>
+
+                        ))}
+                        
+
+                            </footer>
+                        
+                    
+                    </article>
+                 
+                
+            </li>
+
+            ))
+
+
+        }
+
+    </ul>
+
+
+
+</Section>
+
+<style>
+
+    ul{
+        display: grid;
+        grid-template-columns: repeat(
+            auto-fit,
+            minmax(200px,1fr)   );
+        gap: 3rem;
+        margin-inline: -4px;
+       
+    }
+    article{
+        border-radius: 8px;
+        border: 1px solid #e9e8e8;
+        gap:16px;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        height: 100%;
+        transition: all 0.5s ease;
+        
+       
+    }
+    article header{
+        flex: 1; /*asi se alinean hacia abjo todos, asi uno no esta arriba otro mas abajo etc*/ 
+    }
+
+    article h3{
+        margin-bottom: 5px;
+        color: black;
+    }
+
+    article h3 span{
+        color:rgb(20, 218, 106)
+    }
+    article p{
+        font-size: 0.85rem;
+        margin-bottom: 3px;
+
+    }
+   
+
+
+
+    footer{
+
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        font-size: 0.6;
+    }
+    footer span{
+
+        border-radius: 6px;
+        background-color: #eee;
+        font-size: 0.69rem;
+        font-weight: 500;
+        padding: 0.3rem 0.6rem;
+        color: black;
+        }
+
+#visitLogo{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: ;
+}
+#visitWeb{
+
+border: solid 1px rgb(167, 166, 166);
+width: 8rem;
+color:rgb(83, 83, 83);
+font-size: 0.73rem;
+gap:8px;
+border-radius: 0.5rem;
+height:1.8rem;
+ display: flex;
+justify-content: center;
+align-items: center;
+
+
+
+}
+#visitWeb:hover{
+
+background-color: #e9e8e8;
+
+
+
+}
+
+#visitLogo img{
+    width:2.5rem;
+   
+ 
+}
+
+</style>
+
+
+

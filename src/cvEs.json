@@ -1,0 +1,217 @@
+{
+  "basics": {
+    "name": "Héctor Pérez Díaz",
+    "label": "Full Stack Developer",
+    "image": "src/image/fotoHector.png",
+    "imageEs": "src/image/espana.png",
+    "imageEn": "src/image/estados-unidos.png",
+    "email": "contact@hectorpzdiaz.eu",
+    "phone": " +34 682758862",
+    "url": "",
+    "summary": "Además de mi enfoque académico, he invirtiendo mucho tiempo y esfuerzo en sacarme certificaciones y  actualmente estoy en la preparación del certificado profesional de java SE 17. Esta dedicación ha ampliado mis conocimientos en diversos frameworks como Spring , Astros, Angular y lenguajes como Java , Html , Css , JavaScript , SQL  y me ha permitido abordar problemas de manera eficiente . Adicionalmente, he desarrollado sólidas habilidades de gestión del tiempo y trabajo en equipo en roles previos, como mi experiencia militar y trabajo en servicios de emergencia sanitaria, donde también gestionaba situaciones de alta presión y estrés",
+    "location": {
+      "address": "",
+      "postalCode": "",
+      "city": "Madrid",
+      "countryCode": "",
+      "region": "España"
+    },
+    "profiles": [
+    {
+      "network": "Linkeding",
+      "username": "Hector",
+      "url": "https://www.linkedin.com/in/hectorperezdiaz/"
+    },
+    {
+      "network": "GitHub",
+      "username": "Hector",
+      "url": "https://github.com/hectorpzdiaz"
+    },   
+    {
+      "network": "Mail",
+      "username": "Hector",
+      "url": "mailto:contacto@hectorpzdiaz.eu?subject=Contacto "
+    }
+  ]
+
+  },
+  "work": [{
+    "name": "Company",
+    "position": "President",
+    "url": "https://company.com",
+    "startDate": "2013-01-01",
+    "endDate": "2014-01-01",
+    "summary": "Description…",
+    "highlights": [
+      "Started the company"
+    ]
+  }],
+  "education": [{
+    "institution": "Medac",
+    "url": "src/image/finalizacionSuperior.png",
+    "area": 
+    "He adquirido habilidades destacadas en el desarrollo y diseño de aplicaciones móviles, centrándome especialmente en programación avanzada y diseño de interfaz.",
+    "studyType": "Grado Superior (Multiplatform Application Development)",
+    "startDate": "2022-01-01",
+    "certificate": "",
+    "endDate": "2024-01-01",
+    "score": "4.0",
+    "courses": [
+      "SQL",
+      "java",
+      "Html",
+      "Css",
+      "JavaScript"
+
+    ]
+  },
+  {
+    "institution": "OpenWebinars",
+    "url": "src/image/certificadoSpring.png",
+    "area": "Aprendizaje de Spring Framework , imversión de control, spring Boot. ",
+    "studyType": "Certificado Spring ",
+    "startDate": "2023-07-18",
+    "certificate": "",
+    "endDate": "2023-09-27",
+    "score": "4.0",
+    "courses": [
+      
+  
+    ]
+  },
+  {
+    "institution": "OpenWebinars",
+    "url": "src/image/certificadoDocker.png",
+    "area": "Aprendizaje de Docker , creación de imagenes , contenedores y puesta en marcha.",
+    "studyType": "Certificado Docker "
+  
+    
+  },
+  {
+    "institution": "OpenWebinars",
+    "url": "src/image/javascript-essentials-1.png",
+    "area": "Aprendizaje de los fundamentos basicos y esenciales de javaScript.",
+    "studyType": "Certificado JavaScript-essentials-1 "
+  
+    
+  },
+  {
+    "institution": "Camara de Madrid",
+    "url": "src/image/comercioFullStack.png",
+    "area": "Curso intensivo de Full Stack con una duración de tres meses .Durante este programa, me sumergí en tecnologías clave, como HTML, CSS, JavaScript, PHP y bases de datos.",
+    "studyType": "Formación en Full-Stack ",
+    "startDate": "2023-07-18",
+    "certificate": "",
+    "endDate": "2023-09-27",
+    "score": "4.0",
+    "courses": [
+      
+      "JavaScript",
+      "Html",
+      "Css",
+      "java",
+      "Spring",
+      "PHP"
+     
+    ]
+  }
+
+  
+
+
+
+],
+  
+  "certificates": [{
+    "name": "Certificate",
+    "date": "2021-11-07",
+    "issuer": "Company",
+    "url": "https://certificate.com"
+  }],
+  "skills": [
+    {
+      "name": "Java"
+    
+    },
+  
+    {
+      "name": "JavaScript"
+      
+    },
+    {
+      "name": "MySQL"
+    },
+    {
+      "name": "Angular"
+    },
+  
+    {
+      "name": "React"
+   
+    },
+    
+    {
+      "name": "Spring"
+    },
+  
+    {
+      "name": "Astro"
+   
+    },
+    {
+      "name": "Docker"
+    },
+    {
+      "name": "GitHub"
+     
+    }
+  
+
+]
+  ,
+  "projects": [{
+    "name": "Historias.voz",
+    "isActive": true,
+   
+    "description": "Crea audios a partir de tus propias historias o créalas con la IA.",
+    "highlights": [
+      "Elige una voz que más se adapte a tu historia",
+      "100% gratuito",
+      "Python, HTML, CSS y javaScript"
+    ],
+    "url": "https://historias-con-voz.onrender.com",
+    "img" : "src/image/silueta_logo.png"
+    },
+    {
+    "name": "SecurioChatInLive",
+    "isActive": true,
+   
+    "description": "Habla con tus amigos con total seguridad, SecurioChatInLive se encarga de que estés protegido ante cualquier atacante que quiera capturar tus mensaje.",
+    "highlights": [
+      "Chatea con seguridad",
+      "100% gratuito",
+      "Java, Spring y Angular"
+    ],
+    "url": "https://securiochatinlive.onrender.com",
+    "img" : "src/image/logoSecurio.png"
+    }
+
+  ], 
+
+
+    "softSkills": [{
+     "skills": "Comunicación efectiva"
+   
+     },{
+       "skills": " trabajo en equipo"
+   },
+   {
+     "skills": "Critical thinking"
+       
+     }, {
+    "skills": "Iniciative"
+         
+      }
+     
+   ]
+}

@@ -1,0 +1,285 @@
+---
+import {basics}  from '@/cvEs.json'
+const {imageEn} = basics
+
+
+---
+
+<div id="buttomLanguaje">
+   <div id="es_en">
+        {
+         <img src={imageEn} style="width: 42px;" />
+        }
+   
+  </div>
+</div>
+
+
+
+
+<script >
+  
+
+  
+var language = 'es';
+var basic = {};
+
+const importJson = async (url: string) => {
+  try {
+      const response = await fetch(url);
+      const data = await response.json();
+      return data;
+  } catch (error) {
+      console.error("Error al cargar el archivo JSON:", error);
+      throw error;
+  }
+};
+
+
+const changeLanguage = async () => {
+  language = language === 'es' ? 'en' : 'es';
+
+  
+  try {
+    
+ 
+      basic = language === 'es' ? await importJson('src/cvEs.json') : await importJson('src/cvEn.json');
+     const summary:string  = (basic as any).basics.summary;
+     const location: string = (basic as any).basics.location.region;
+    const educacion: any[] = (basic as any).education;
+    const project: any[] = (basic as any).projects;
+    const softSkills: any []= (basic as any).softSkills;
+
+  
+      
+
+     
+
+      // Actualizar la vista con la nueva información
+      updateSummary( summary , location, educacion,project, softSkills);
+
+ 
+  } catch (error) {
+      console.error("Error al cambiar el idioma:", error);
+  }
+};
+
+const contentLanguage = document.getElementById("es_en");
+const contentLanguageMovil = document.getElementById("es_enMovil");
+
+
+ contentLanguage?.addEventListener("click", () => {
+  changeLanguage();
+  
+});
+contentLanguageMovil?.addEventListener("click", () => {
+  changeLanguage();
+  
+});
+
+
+  // Actualiza la vista con la nueva información
+const updateSummary = (summary: string ,locat: string ,educacion: any[],project: any[], softSkills : any[]) => {
+    //summary
+    const sobreMiElement = document.getElementById("sobreMi");
+
+  if (sobreMiElement) {
+  sobreMiElement.innerText = summary;
+} else {
+
+}
+
+  //location
+  var locationSpan = document.getElementById("location");
+  if(locationSpan){
+    var existingContent = locationSpan.innerHTML;
+    locationSpan.innerHTML = existingContent.replace(/, [^<]*$/, ', ' + locat);
+  }else{
+   
+  }
+
+    //educacion
+    const areaEducacionElements = Array.from(document.getElementsByClassName("areaEducacion")) as HTMLElement[];
+    console.log(areaEducacionElements)
+  const studyTypeElements = Array.from(document.getElementsByClassName("studyType")) as HTMLElement[];
+  const seeCertificate = Array.from(document.getElementsByClassName("botonCertificados")) as HTMLElement[];
+
+
+  for (let i: number = 0; i < educacion.length; i++) {
+    const textoArea = educacion[i].area;
+    const estudio = educacion[i].studyType;
+    console.log(language)
+        if(language == 'en'){
+          seeCertificate[i].innerText ="Certificate"
+        }else{
+          seeCertificate[i].innerText ="Certificado"
+
+        }
+   
+    areaEducacionElements[i].innerText = textoArea;
+    studyTypeElements[i].innerText = estudio;
+  }
+
+
+    //proyectos
+
+    const descripcionProyecto =Array.from(document.getElementsByClassName("descriptionProyects")) as HTMLElement[];
+    const hightli =Array.from(document.getElementsByClassName("highlights")) as HTMLElement[];
+    const footer =Array.from(document.getElementsByClassName("footerProyect")) as HTMLElement[];
+    const visitWeb =Array.from(document.getElementsByClassName("web")) as HTMLElement[];
+
+
+   
+      
+
+      for(let e: number =0; e < footer.length; e++){
+        var hightFooter = footer[e].querySelectorAll("span")
+        const description = project[e].description
+
+        console.log(language)
+        if(language == 'en'){
+          visitWeb[e].innerText =" visit website"
+        }else{
+          visitWeb[e].innerText ="visitar web"
+
+        }
+       
+
+        descripcionProyecto[e].innerText = description
+       
+        for( let j:number = 0 ; j < 3; j++){
+          
+          var span = hightFooter[j]
+        const hight = project[e].highlights
+       const hight1 = hight[j]
+      span.innerText = hight1
+    
+
+    }
+
+   
+
+
+      
+
+    }
+
+    
+      // soft Skills
+
+      const soft = Array.from(document.getElementsByClassName("listSoft")) as HTMLElement[];
+
+      for(let i:number= 0; i<soft.length;i++){
+
+        const Habilidades = softSkills[i].skills
+
+          soft[i].innerText = Habilidades 
+      }
+   
+
+ 
+
+  
+    //imgLanguaje
+    var imgContainer = document.getElementById("es_en")
+    var imgContainerMovil = document.getElementById("es_enMovil")
+    const cv =  document.getElementById('cv') as HTMLElement
+    if(language == "en"){
+
+  
+      if(imgContainer && imgContainerMovil){
+      const imgEs = imgContainer.querySelector('img') as HTMLImageElement;
+      const imgEsMovil = imgContainerMovil.querySelector('img') as HTMLImageElement;
+      const about =  document.getElementById('about') as HTMLElement
+      const proyect =  document.getElementById('proyectos') as HTMLElement
+      const HabilidadesTecnicas =  document.getElementById('habilidadesTecnicas') as HTMLElement
+      const habilidadesBlandas =  document.getElementById('habilidadesBlandas') as HTMLElement
+      const educacion =  document.getElementById('educacion') as HTMLElement
+   
+
+
+     
+      if(imgEs){
+
+    
+        imgEs.src = "src/image/espana.png";
+        imgEsMovil.src = "src/image/espana.png";
+        imgEs.alt = "Idioma Español";
+        about.innerText = "About"
+        proyect.innerText = "Proyects"
+        educacion.innerText = "Education"
+        HabilidadesTecnicas.innerText ="Skills"
+        habilidadesBlandas.innerText ="Soft skills"
+        cv.childNodes[0].textContent ="Download CV"
+
+
+
+      }
+     }
+  }else if(language == "es"){
+
+    if(imgContainer && imgContainerMovil){
+      const imgEn = imgContainer.querySelector('img') as HTMLImageElement ;
+      const imgEnMovil = imgContainerMovil.querySelector('img') as HTMLImageElement ;
+      const about =  document.getElementById('about') as HTMLElement
+      const proyect =  document.getElementById('proyectos') as HTMLElement
+      const educacion =  document.getElementById('educacion') as HTMLElement
+      const HabilidadesTecnicas =  document.getElementById('habilidadesTecnicas') as HTMLElement
+      const habilidadesBlandas =  document.getElementById('habilidadesBlandas') as HTMLElement
+
+
+
+     
+      if(imgEn){
+
+    
+        imgEn.src = "src/image/estados-unidos.png";
+        imgEnMovil.src = "src/image/estados-unidos.png";
+        imgEn.alt = "Idioma Ingles";
+        about.innerText = "Sobre mi"
+        proyect.innerText = "Proyectos"
+        HabilidadesTecnicas.innerText ="Habilidades tecnicas"
+        habilidadesBlandas.innerText ="Habilidades  blandas"
+        cv.childNodes[0].textContent ="Descargar cv"
+        educacion .innerText = "Educación"
+       }
+
+
+      }
+
+    }
+}
+
+</script>
+
+<style>
+    #buttomLanguaje{
+      
+      margin:  auto;
+      position: relative;
+       width: 60px;
+      height: 2.6rem;
+      top: -4rem;
+      border-bottom-left-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom-right-radius: 10px;
+      z-index: 1;
+    }
+
+#es_en{
+  border: 1px solid rgb(151, 151, 151);
+  height: 1.8rem;
+  position: absolute;
+  border-radius: 4px;
+		cursor: pointer;	
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	}
+ 
+
+	
+</style>
+

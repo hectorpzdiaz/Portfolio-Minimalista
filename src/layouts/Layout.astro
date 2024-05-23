@@ -1,0 +1,149 @@
+---
+interface Props {
+	title: string;
+}
+
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/png" href="/faviconhe.png" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+	
+		<slot />
+		
+	</body>
+</html>
+
+<style is:global>
+	html{
+
+		font-family: Menlo, Monaco, Lucida Console ,  'Courier New', Courier, monospace;
+		background: #ffff;
+		letter-spacing: -0.025rem;
+
+	}
+
+	body,
+	figure{
+
+		margin: 0;
+		padding: 0;
+
+	}
+
+	a{
+
+		text-decoration: none;
+	}
+
+	ul{
+
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	*,*::before, *::after{
+
+		box-sizing: :border-box;
+	}
+	
+	h1,h2,h3,h4{
+		
+		margin: 0;
+		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	}
+
+	h2{
+		margin-bottom: 0.25rem;
+	}
+	
+	p{
+
+		color:#777;
+		font-size: .9rem;
+		line-height: 1.5;
+		margin: 0;
+		text-wrap: pretty;
+		}
+
+	
+		.print{
+			display: none !important;
+		}
+	.no-print{
+			display: block !important;
+		}
+
+
+	@media print {
+		.print{
+			display: block !important;
+			display: flex;
+  			  flex-direction: column;
+   			 flex-wrap: wrap;
+
+		}
+		title{
+			display: none !important;
+		}
+	
+		#buttomLanguaje{
+			display: none !important;
+		}
+		.no-print{
+			display: none !important;
+		
+		}
+	}
+
+	@media screen and  (max-width: 1100px) {
+	
+		#buttomInfo{
+    
+   			 display: block !important;
+		display: flex !important;
+    		align-items: center !important;
+    		justify-content: center !important;
+			
+		}
+	
+
+		#buttomLanguaje{
+		display: none !important;
+			
+		}
+		#buttomLanguajeMovil{
+		display: block !important;
+			
+		}
+
+		#footerScroll{
+			display: none !important;
+		
+		}
+	
+		#botonCertificados{
+			padding: 0.6rem;
+  
+		}
+
+		#visitWeb{
+
+			padding: 0.3rem;
+
+
+}
+	}
+	
+	
+</style>

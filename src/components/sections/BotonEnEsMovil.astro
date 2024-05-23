@@ -1,0 +1,60 @@
+---
+import {basics}  from '@/cvEs.json'
+
+const {imageEn} = basics
+
+---
+
+
+
+
+<div id="buttomLanguajeMovil">
+    <div id="es_enMovil">
+         {
+          <img src={imageEn} />
+         }
+    
+   </div>
+ </div>
+
+
+
+
+ <style>
+    #buttomLanguajeMovil{
+      margin:  auto;
+      position: fixed;
+       width: 50px;
+      height: 2.6rem;
+      bottom: 5rem;
+        right: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom-right-radius: 10px;
+      z-index: 1;
+      display: none;
+    }
+
+#es_enMovil{
+  
+    height: 2rem;
+    position: absolute;
+	  border-radius: 4px;
+	  cursor: pointer;	
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+	}
+    #es_enMovil img{
+         border-radius: 16px;
+         width: 48px;
+ 
+  
+  }
+ 
+
+	
+</style>
+

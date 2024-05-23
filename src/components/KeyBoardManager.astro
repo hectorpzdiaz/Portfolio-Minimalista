@@ -1,0 +1,187 @@
+---
+import {basics} from "@/cvEs.json"
+const { profiles } = basics
+
+const SOCIAL: Record <string, any> = {
+
+  Linkeding:`<svg  style= "margin-right: 8px" 
+ width="20px" height="25px" viewBox="0 0 512.000000 512.000000"
+ preserveAspectRatio="xMidYMid meet">
+
+<g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+fill="#444" stroke="none">
+<path d="M595 5109 c-151 -22 -270 -84 -386 -199 -69 -68 -94 -102 -127 -170
+-84 -171 -77 29 -77 -2180 0 -2209 -7 -2009 77 -2180 59 -120 178 -239 298
+-298 171 -84 -29 -77 2180 -77 2209 0 2009 -7 2180 77 68 33 102 59 171 127
+68 69 94 103 127 171 84 171 77 -29 77 2180 0 2209 7 2009 -77 2180 -59 120
+-178 239 -298 298 -172 84 35 77 -2145 78 -1072 1 -1967 -2 -2000 -7z m948
+-969 c200 -62 335 -282 298 -485 -50 -275 -326 -435 -587 -342 -91 33 -190
+121 -235 208 -111 218 -24 485 193 595 95 48 222 57 331 24z m1964 -1011 c370
+-51 574 -294 629 -749 10 -86 13 -273 14 -738 l0 -624 -29 -29 -29 -29 -286 0
+-286 0 -32 29 -33 29 -5 614 c-5 591 -6 615 -26 675 -58 170 -154 243 -319
+243 -167 0 -281 -91 -343 -274 l-27 -81 -5 -588 -5 -589 -33 -29 -32 -29 -276
+0 -276 0 -29 29 -29 29 0 1011 0 1011 29 32 29 33 269 3 c254 2 270 1 301 -18
+43 -26 52 -54 52 -157 l0 -85 40 51 c149 188 422 274 737 230z m-1822 -35 c68
+-32 65 25 65 -1064 0 -851 -2 -985 -15 -1010 -31 -59 -35 -60 -322 -60 -182 0
+-270 4 -288 12 -57 26 -55 -19 -55 1063 0 685 3 1003 11 1016 5 11 25 29 42
+39 29 18 52 20 280 20 206 0 255 -3 282 -16z"/>
+</g>
+</svg>`,
+GitHub:`<svg  style= "margin-right: 8px" 
+ width="20px" height="25px" viewBox="0 0 512.000000 512.000000"
+ preserveAspectRatio="xMidYMid meet">
+
+<g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+fill="#444" stroke="none">
+<path d="M2247 4995 c-1043 -126 -1913 -881 -2167 -1880 -59 -234 -74 -356
+-74 -610 -1 -129 5 -259 13 -315 108 -783 536 -1431 1212 -1841 206 -124 479
+-239 570 -239 45 0 55 4 85 34 22 22 34 44 35 63 2 40 -3 448 -4 449 -1 1 -42
+-5 -92 -13 -108 -17 -273 -12 -360 12 -115 30 -202 79 -279 158 -64 63 -81 90
+-144 217 -83 169 -138 244 -230 308 -142 100 -165 144 -87 171 31 10 54 11
+103 3 136 -22 259 -109 355 -251 120 -178 219 -247 389 -271 78 -11 185 1 285
+31 71 22 71 22 98 131 18 70 67 163 111 209 l25 26 -63 7 c-103 12 -293 55
+-386 88 -168 59 -276 123 -395 237 -222 212 -326 520 -314 931 4 141 9 178 31
+255 36 121 88 223 164 323 48 64 60 86 53 100 -21 40 -41 168 -41 261 0 107
+18 219 50 317 25 73 38 78 145 63 136 -19 330 -99 506 -209 71 -45 80 -48 111
+-39 84 24 309 59 450 69 228 17 538 -10 737 -64 l54 -15 91 56 c175 108 358
+183 495 203 108 15 117 10 145 -79 13 -42 29 -111 36 -154 17 -103 8 -293 -17
+-372 l-19 -60 46 -56 c150 -187 212 -376 211 -645 -1 -671 -304 -1054 -930
+-1179 -64 -12 -142 -26 -174 -30 l-58 -7 35 -38 c43 -48 88 -135 112 -216 15
+-51 18 -122 23 -504 5 -334 9 -451 19 -467 17 -31 63 -53 108 -53 93 0 453
+163 659 297 165 109 299 219 435 359 385 395 615 869 691 1424 20 144 17 507
+-5 655 -172 1140 -1081 2015 -2234 2150 -154 18 -464 18 -615 0z"/>
+</g>
+</svg>`
+
+
+
+
+}
+
+const profilesInfo =profiles.map(({network,url}) =>{
+const firstLetter= network[0].toUpperCase()
+const icon = SOCIAL[network]
+
+  return{
+    id:network,
+    section:'social',
+    title: `Visitar ${network}` ,
+    url,
+    icon,
+    hotkey: `ctrl + ${firstLetter}`, 
+  }
+
+
+})
+
+
+
+---
+
+
+
+<footer class="no-print" id="footerScroll" >
+  Pulsa <kbd class="ctrlK">CTRL</kbd> + <kbd class="ctrlK">K</kbd> para abrir la paleta de comandos
+</footer>
+
+<ninja-keys data-info={JSON.stringify(profilesInfo)}  
+placeholder="Buscar comando">
+</ninja-keys>
+
+<script>
+
+
+import "ninja-keys"
+document.addEventListener("DOMContentLoaded", function() {
+const ninja = document.querySelector('ninja-keys');
+
+if (ninja != null){
+  const info = ninja.getAttribute("data-info") ?? "[]"
+  const parsedInfo = JSON.parse(info)
+
+
+  const data = parsedInfo.map((item : any) =>{
+    return{
+      ...item,
+      handler:()=>{
+      window.open(item.url, "_blank")
+    }
+
+    }
+
+  })
+
+ 
+  ninja.data = [
+ 
+  
+  ...data,
+  ];
+  }
+{
+ 
+}
+
+var downFooter=document.getElementById("footerScroll")
+
+var scrollTop = 0;
+addEventListener("scroll", function(){
+
+var scrollY = window.scrollY;
+
+
+if (downFooter !== null) {
+ 
+
+  if(scrollY > scrollTop){
+  
+
+    downFooter.style.opacity = "1";
+    
+          
+      }else if (scrollY < scrollTop){
+    
+
+        downFooter.style.opacity = "0";
+
+     }
+
+    
+    }
+
+     scrollTop = scrollY;
+   
+
+}) 
+
+});
+
+</script>
+
+
+
+<style>
+    
+
+#footerScroll{
+  background-color: rgb(235, 236, 236);
+  border-top: 1px solid rgb(236, 236, 236);
+  position: fixed;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  padding-block: 11px;
+   text-align: center;
+  font-size: 0.85rem;
+  opacity: 0; /* Cambiado de visibility a opacity */
+  transition: opacity 0.4s ease-in-out;
+ 
+}
+
+.ctrlK{
+  color: rgb(255, 0, 0)
+
+
+}
+
+</style>

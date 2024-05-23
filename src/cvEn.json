@@ -1,0 +1,172 @@
+{
+    "basics": {
+      "name": "Héctor Pérez Díaz",
+      "label": "Full Stack Developer",
+      "image": "",
+      "imageEs": "src/image/espana.png",
+      "imageEn": "src/image/estados-unidos.png",
+      "email": "",
+      "phone": " +34 682758862",
+      "url": "",
+      "summary": "In addition to my academic focus, I have invested significant time and effort in obtaining certifications. I am currently preparing for the Java SE 17 Professional Certificate. This dedication has expanded my knowledge across various frameworks such as Spring, Astros, and Angular, as well as languages including Java, HTML, CSS, JavaScript, and SQL. It has enabled me to efficiently tackle complex problems. Additionally, I have developed strong time management and teamwork skills in previous roles, such as my military experience and work in emergency medical services, where I also handled high-pressure and stressful situations.",
+      "location": {
+        "address": "2712 Broadway St",
+        "postalCode": "CA 94115",
+        "city": "Madrid",
+        "countryCode": "US",
+        "region": "Spain"
+      },
+      "profiles": [
+      {
+        "network": "Linkeding",
+        "username": "Hector",
+        "url": "https://www.linkedin.com/in/hectorperezdiaz/"
+      },
+      {
+        "network": "GitHub",
+        "username": "Hector",
+        "url": "https://github.com/hectorpzdiaz"
+      }
+    ],
+
+    "cv":[{
+
+      "name" : "Descargar Cv",
+      "url" : ""
+    }]
+    
+
+    }
+    ,
+    "projects": [{
+      "name": "Historias.voz",
+      "isActive": true,
+     
+      "description": "Create audio from your own stories or generate them with AI.",
+      "highlights": [
+        "Choose a voice that best suits your story.",
+        "Free 100%",
+        "Python, HTML, CSS y javaScript"
+      ],
+      "url": "https://historias-con-voz.onrender.com",
+      "img" : "src/image/silueta_logo.png"
+      },{
+
+      
+        "name": "SecurioChatInLive",
+        "isActive": true,
+       
+        "description": "Talk to your friends with total security. SecurioChatInLive ensures that you are protected against any attacker trying to capture your messages.",
+        "highlights": [
+          "Chat Security",
+          "Free 100%",
+          "Java, Spring y Angular"
+        ],
+        "url": "https://securiochatinlive.onrender.com",
+        "img" : "src/image/logoSecurio.png"
+        }
+    
+    
+    ],
+    
+    
+    "skills": [
+      {
+      "name": "Java"
+    
+    },
+  
+    {
+      "name": "JavaScript"
+      
+    },
+    {
+      "name": "MySQL"
+    },
+    {
+      "name": "Angular"
+    },
+  
+    {
+      "name": "React"
+   
+    },
+    
+    {
+      "name": "Spring"
+    },
+  
+    {
+      "name": "Astro"
+   
+    },
+    {
+      "name": "Docker"
+    },
+    {
+      "name": "GitHub"
+     
+    }
+  
+  ]
+    
+      , 
+       "softSkills": [{
+        "skills": " Effective communication"
+      
+        },{
+          "skills": "Teamwork"
+      },
+      {
+        "skills": "Critical thinking"
+          
+        }, {
+       "skills": "Initiative"
+            
+         }
+ 
+        
+      ],
+      "education": [{
+        "institution": "Medac",
+        "url": "src/image/finalizacionSuperior.png",
+        "area": 
+        "I have developed strong skills in mobile app development and design, focusing particularly on advanced programming and interface design.",
+        "studyType": "Grado Superior (Multiplatform Application Development)"
+  
+      },
+      {
+        "institution": "OpenWebinars",
+        "url": "src/image/certificadoSpring.png",
+        "area": "Learning Spring Framework, inversion of control, and Spring Boot. ",
+        "studyType": "Certificate Spring "
+  
+      },
+      {
+        "institution": "OpenWebinars",
+        "url": "src/image/certificadoDocker.png",
+        "area": "Learning Docker  , creation of images , containers and deployment",
+        "studyType": "Certificate Docker "
+      
+        
+      },
+      {
+        "institution": "OpenWebinars",
+        "url": "src/image/javascript-essentials-1.png",
+        "area": "Learning the basic and essential fundamentals of javaScript.",
+        "studyType": "Certificate JavaScript-essentials-1 "
+      
+        
+      },
+      {
+        "institution": "Camara de Madrid",
+        "url": "src/image/comercioFullStack.png",
+        "area": "Intensive three-month Full Stack course. During this program, I immersed myself in key technologies including HTML, CSS, JavaScript, PHP, and databases.",
+        "studyType": "Formation in Full-Stack "
+      }
+    
+      
+    
+    
+    ]
+  }

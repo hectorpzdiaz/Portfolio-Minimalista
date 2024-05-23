@@ -1,0 +1,205 @@
+---
+import {basics} from '@/cvEs.json'
+
+import Section from '@/components/Section.astro'
+import Mail from '@/icons/Mail.astro'
+import GitHub from '@/icons/GitHub.astro'
+import Linkeding from '@/icons/Linkeding.astro'
+import Worl from '@/icons/Worl.astro'
+import { url } from 'inspector'
+
+
+const {name , label, image , location , profiles , phone , email} = basics
+const { city , region } = location
+
+const SOCIAL_ICONS: Record <string, any> = {
+    Linkeding,
+    GitHub
+   
+};
+
+const linkedInfo = profiles.find(({network}) => network == "Linkeding") 
+const linkedUrl = linkedInfo?.url
+const printInfo = [ linkedUrl ,email , phone] .filter(Boolean).join( "  ")
+
+
+
+---
+
+<Section>
+
+    <div class = "container">
+        <div class="info">
+            <h1>{name}</h1>
+            <h2>{label}</h2>
+           <span id="location">
+            
+            <Worl/>
+                {city} , {region}
+            
+            </span>
+
+            
+            <footer class="print" >
+                <div id="infoContacto">
+               <h3> {printInfo}</h3>
+                 </div>
+
+            </footer>
+
+             <footer class="no-print">      
+                   
+                
+                <p >
+                    {email}
+                  </p>
+           
+          {
+             
+              profiles.map(({network, url}) => {
+                  
+                  const Icon = SOCIAL_ICONS[network]
+                  
+                  if (network === "Linkeding" || network === "GitHub") {
+
+                  return(
+            
+                  <a
+                  href={url}
+                      title={`Visitar el perfil ${name} `}
+                      target="_black"
+                      rel="noopener noreferrer"
+                  >
+                
+                 <Icon />
+                 
+
+                     
+                  </a>
+              
+                  )
+                  
+              }
+                })
+                
+          }
+          
+             
+          <a id="cv" href="src/image/cv.pdf" download="CV Héctor Pérez Díaz.pdf">Descargar cv <img src="src/image/descargar.png"></a>
+                
+               
+      
+
+            </footer>
+
+        </div>
+        <figure>
+          
+            <img src={image} alt={name} />
+        </figure>
+  
+          
+    </div>
+
+</Section>
+
+<style>
+    .container{
+        display: flex;     
+        flex-direction: row; 
+        align-items: center;
+        justify-content:space-between;
+       
+    }
+
+    .info{
+        display: flex;
+        flex-direction: column;
+        gap: 0.356rem;
+    }
+
+
+    h1{
+        font-size: 2rem;
+
+    }
+    h2{
+        color: #444;
+        font-weight: 500;
+        font-size: 1.1rem;
+        text-wrap: balance;
+    }
+
+    img{
+        
+        object-fit: cover;
+        width: 140px;
+        right: 40px;
+      
+        border-radius: 10px;
+        position:relative;
+       
+      
+        
+    }
+
+    span{
+        color: #666;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        font-size: 0.85rem;
+        letter-spacing: -0.05rem;
+    }
+    footer{
+        margin-top: 8px;
+        font-size: 0.65rem;
+        color: #818181;
+        width: 22rem;
+ 
+  
+
+       
+    }
+    footer a{
+        
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #b3b2b2;
+        padding: 6px;
+        height: 20px;
+        width: auto;
+        font-size: 13px;
+        transform: translateY(0.4rem);
+        margin-right: 0.6rem;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+    }
+    footer a:hover{
+        background-color: #dddddd;
+        border: 1px solid #a5a3a3;
+
+    }
+    #infoContacto{
+        max-width: 9rem;
+  
+    }
+
+ 
+    
+  #cv {
+           
+       cursor: pointer;
+     transform: translateY(-3px);
+       color: gray;
+       gap: 8px;
+    }
+    #cv img {
+           
+       width: 1rem;
+       right: 0;
+    }
+
+
+</style>

@@ -1,0 +1,63 @@
+---
+import Layout from '@/layouts/Layout.astro'; 
+
+import  Hero from '@/components/sections/Hero.astro';
+import  Skills from '@/components/sections/Skills.astro';
+import About from '@/components/sections/About.astro';
+import Education from '@/components/sections/Education.astro';
+/*import Experience from '@/components/sections/Experience.astro';*/
+import Proyects from '@/components/sections/Proyects.astro';
+import BotonEnEs from '@/components/sections/BotonEnEs.astro';
+import KeyBoardManager from '@/components/KeyBoardManager.astro';
+import BotonEnEsMovil from '@/components/sections/BotonEnEsMovil.astro';
+import SoftSkills from "@/components/sections/SoftSkills.astro";
+import Line from "@/components/sections/Line.astro";
+
+import ButtomInfo from '@/components/ButtomInfo.astro';
+
+
+---
+
+<Layout title="Portfolio  Héctor Pérez Diáz">
+	<main>
+		
+		<BotonEnEs/>
+		<Hero/>
+		<About/>
+		<Line/>
+		<!--<Experience/> -->
+		<Proyects />
+		<Skills />
+		<SoftSkills/>
+		<Education />
+		<KeyBoardManager />
+		<ButtomInfo/>
+		<BotonEnEsMovil/>
+		
+		
+		
+	
+	</main>
+	
+</Layout>
+
+<style>
+	main{
+
+		padding: 4rem;
+		margin: auto;
+		
+	}
+
+	@media screen and  (max-width: 1100px) {
+	
+		
+	
+		main{
+			padding: 2.4rem;
+
+
+		}
+	}
+	
+</style>

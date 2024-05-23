@@ -1,0 +1,209 @@
+---
+import Info from '@/icons/Info.astro'
+
+import {basics} from '@/cvEs.json'
+import GitHub from '@/icons/GitHub.astro'
+import Linkeding from '@/icons/Linkeding.astro'
+import Mail from '@/icons/Mail.astro'
+const {profiles} =  basics
+
+const SOCIALICON : Record<string, any> ={
+    Linkeding,
+    GitHub,
+    Mail
+  
+}
+
+
+---
+
+
+<div id="buttomInfo" >
+
+    <Info/>
+</div>
+    <div id="contact">
+        <span>Contacto:</span>
+        <ul>
+        {
+            profiles.map(({network, url})=>{
+                const Icon = SOCIALICON[network];
+                
+
+                return(
+
+               
+
+                    <li>
+
+                       <a  href={url} target="_blank" title={`Visita ${network}`} > <Icon/></a>
+                       
+                       
+
+                    </li>
+
+                   
+
+                    )
+
+            })
+      
+
+        }
+         </ul>
+
+    </div>
+
+
+
+
+
+
+<script>
+
+    const botonInfo = document.getElementById("buttomInfo");
+    const contact = document.getElementById("contact");
+    const sections = document.querySelectorAll("section");
+    const buttomLanguajesMovil = document.getElementById("buttomLanguajeMovil");
+
+    var click = 0
+
+
+    botonInfo?.addEventListener("click", function(){
+
+        if(click === 0 && contact && sections && buttomLanguajesMovil && botonInfo ){
+            
+            contact.style.opacity="1"
+            botonInfo.style.border="2.5px solid #14DA6A"
+            contact.style.transition="all 0.5s ease"
+            buttomLanguajesMovil.style.filter="blur(4px)"
+
+           
+
+            for (const section of sections){
+
+              section.style.filter="blur(4px)"
+
+            }
+
+            click++
+
+        }else if( click === 1){
+
+            if(contact && sections && buttomLanguajesMovil && botonInfo ){
+                botonInfo.style.border="none"
+            contact.style.opacity="0"
+            contact.style.transition="all 0s ease"
+            buttomLanguajesMovil.style.filter="none"
+
+           
+
+            for (const section of sections){
+
+              section.style.filter="none"
+
+            }
+
+            click--
+
+        }
+
+
+        }
+       
+
+
+       
+
+
+    })
+
+
+
+
+
+
+
+</script>
+
+
+
+
+<style>
+#buttomInfo{
+    width: 3.3rem;
+    height: 3.3rem;
+    position: fixed;
+    bottom: 1.5rem;
+    right: 0.6rem;
+    border-radius: 10px;
+    -webkit-box-shadow: 5px 3px 16px -1px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 5px 3px 16px -1px rgba(66, 68, 90, 1);
+    box-shadow: 5px 3px 16px -1px rgba(66, 68, 90, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  background-color: rgb(0, 0, 0);
+    display: none;
+    z-index: 1;
+   
+}
+
+#contact{
+    width: 15rem;
+    height: 6rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    -webkit-box-shadow: 5px 3px 16px -1px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 5px 3px 16px -1px rgba(66, 68, 90, 1);
+    box-shadow: 5px 3px 16px -1px rgba(66, 68, 90, 1);
+    background-color: rgb(252, 251, 251);
+    border: 1px solid rgb(105, 103, 103);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1;
+    opacity: 0;
+    text-align: center;
+   
+
+  
+    
+}
+#contact span{
+   transform: translateY(0.4rem);
+   font-size: 0.9rem;
+
+}
+
+#contact ul{
+
+    height: 5rem;
+    width: 14rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 23px;
+
+
+}
+#contact ul li a{
+    width: 2.9rem;
+    height: 2.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid rgb(146, 146, 146);
+    background-color: rgb(233, 233, 233);
+    
+
+
+}
+
+</style>

@@ -1,0 +1,27 @@
+---
+import Section from '@/components/Section.astro';
+
+import { basics as basicsSpanish } from '@/cvEs.json'
+ let basic = basicsSpanish;
+
+
+---
+
+<Section  >
+    <h2 id="about">Sobre mi</h2>
+    <p id="sobreMi">
+        {basic.summary}
+    </p>
+</Section>
+
+<style>
+
+    #sobreMi{
+        margin-top: 0.5rem;
+    }
+
+
+
+</style>
+
+
